@@ -85,8 +85,8 @@ const getEntries = async () => {
 	if (request.ok) {
 		// Save new entries
 		const requestData = await request.json();
-		const requestDataKeys = Object.keys(requestData);
-		if (requestDataKeys.length > 0) {
+		if (requestData != null) {
+			const requestDataKeys = Object.keys(requestData);
 			requestDataKeys.forEach((key) => {
 				addEntry(key, requestData[key]);
 			});
