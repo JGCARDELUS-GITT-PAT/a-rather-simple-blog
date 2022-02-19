@@ -265,5 +265,6 @@ $("#entry-delete-confirm").on("click", () => {
 
 // Load all entries on startup
 $(document).ready(() => {
+	hideContentWindows();
 	getEntries();
 });
