@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>A rather simple blog</title>
+
+		<link rel="stylesheet" href="./libs/bootstrap.css">
+		<link rel="stylesheet" href="./blog.css">
+	</head>
+	<body>
+
+		<main>
+		<div class="card">
+		
+		<div class="row" id="blog-header">
+		<div class="col-12 content-container">
+			<div class="card-body">
+				<div class="row mt-2">
+					<div class="col-12">
+						<h1 class="display-4">A rather simple blog.</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		<div class="row" id="blog-body">
+		<div class="col-4 content-container" id="navbar">
+			<div class="card-body">
+				<!-- <div class="row mt-2">
+					<div class="col-12">
+						<h2>Menu</h2>
+					</div>
+				</div> -->
+				<div class="row">
+					<div class="col-12">
+						<button id="navbar-new-entry" class="btn btn-primary">
+							Nueva entrada
+						</button>
+					</div>
+				</div>
+
+				<div class="row mt-4">
+					<div class="col-12">
+						<h4>Entradas</h4>
+					</div>
+				</div>
+				
+				<div class="row mt-2">
+					<div class="col-12" id="navbar-entries-container">
+						<div class="list-group list-group-flush" id="navbar-entries">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-8 content-container" id="content">
+			<div class="card-body content-window fill-height" id="content-entry">
+				<div class="row mt-2">
+					<div class="col-12">
+						<h2 id="entry-title">Título de la entrada</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<h6 class="text-muted" id="entry-author">Autor de la entrada</h6>
+					</div>
+				</div>
+
+				<div class="row mt-2" id="entry-content-container">
+					<div class="col-12">
+						<p id="entry-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores modi, nam repellat similique reiciendis, praesentium doloremque aliquam aperiam tempore repellendus, enim dolorem nobis rerum tenetur eveniet autem facere quae expedita!</p>
+					</div>
+				</div>
+
+				<div class="row mt-2 justify-content-end">
+					<div class="col-auto" id="entry-delete-request-container">
+						<button class="btn btn-light" id="entry-delete-request">
+							Eliminar entrada
+						</button>
+					</div>
+					<div class="col-auto hidden" id="entry-delete-container">
+						<div class="row">
+							<div class="col-auto mt-2">
+								<p>¿Estás seguro?</p>
+							</div>
+							<div class="col-auto">
+								<button class="btn btn-secondary" id="entry-delete-cancel">
+									No
+								</button>
+							</div>
+							<div class="col-auto">
+								<button class="btn btn-danger" id="entry-delete-confirm">
+									Sí
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card-body content-window fill-height" id="content-new-entry">
+				<div class="row mt-2">
+					<div class="col-12">
+						<h2>Nueva entrada</h2>
+					</div>
+				</div>
+
+				<div class="row mt-2">
+					<div class="col-12">
+						<div class="alert alert-danger new-entry-alert" id="content-error-alert" role="alert">
+							A simple danger alert—check it out!
+						</div>
+
+						<div class="alert alert-success new-entry-alert" id="content-success-alert" role="alert">
+							A simple success alert—check it out!
+						</div>
+					</div>
+				</div>
+
+				<div class="row mt-2">
+					<div class="col-12">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="new-entry-title" placeholder="Mi entrada increíble">
+							<label for="new-entry-title">Título</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row mt-2">
+					<div class="col-6">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="new-entry-author" placeholder="Mi nombre">
+							<label for="new-entry-author">Autor</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row mt-2" id="new-entry-content-container">
+					<div class="col-12">
+						<div class="form-floating mb-3">
+							<textarea type="text" class="form-control" id="new-entry-content" placeholder="Mi increíble contenido"></textarea>
+							<label for="new-entry-content">Contenido</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row mt-2 justify-content-end">
+					<div class="col-6">
+						<button class="btn btn-primary" id="new-entry-post">
+							¡Guarda esta obra de arte!
+						</button>
+					</div>
+				</div>
+			</div>	
+
+			<div class="card-body content-window fill-height" id="content-no-entries">
+				<div class="row mt-2">
+					<div class="col-12">
+						<h2>Vaya, esto está un poco vacío</h2>
+					</div>
+				</div>
+
+				<div class="row justify-content-center" id="no-entries-img">
+					<div class="col-10"><img class="img-fluid" src="./assets/empty.svg" alt=""></div>
+				</div>
+
+				<div class="row mt-2 justify-content-center">
+					<div class="col-8"><button class="btn btn-primary" id="no-entries-new-entry">Escribe algo</button></div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		</div>
+		</main>
+
+	</body>
+
+	<script src="./libs/jquery.js"></script>
+	<script src="./libs/bootstrap.js"></script>
+	<script src="./blog.js"></script>
+</html>
